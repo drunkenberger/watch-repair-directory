@@ -47,11 +47,11 @@ const LandingHero = ({
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509048191080-d2984bad6ae5')] bg-cover bg-center mix-blend-overlay opacity-20" />
         <div className="max-w-7xl mx-auto px-4 py-24 relative">
           <div className="text-center space-y-8 max-w-3xl mx-auto bg-transparent">
-            <h1 className="text-5xl font-bold tracking-tight">
+            <h1 className="text-6xl font-serif font-medium tracking-tight leading-tight">
               {" "}
               Watch Repair Near Me
             </h1>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-gray-300 font-sans font-light">
               Find trusted local watchmakers for repairs, maintenance, and
               restoration of your precious timepieces
             </p>

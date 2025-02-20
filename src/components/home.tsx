@@ -6,6 +6,7 @@ import ResultsPanel from "./ResultsPanel";
 import ShopDetailModal from "./ShopDetailModal";
 import LandingHero from "./LandingHero";
 import InfoSection from "./InfoSection";
+import PriceGuide from "./PriceGuide";
 import Footer from "./Footer";
 import { getGoogleMapsLoader } from "@/lib/googleMaps";
 
@@ -221,6 +222,7 @@ const HomePage = () => {
         {...selectedShop}
       />
       <InfoSection />
+      <PriceGuide />
       <Footer />
     </div>
   );

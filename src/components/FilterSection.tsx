@@ -33,7 +33,7 @@ const FilterSection = ({
         <h3 className="text-lg font-semibold text-gray-900">Filters</h3>
       </div>
 
-      <div className="grid grid-cols-4 gap-8">
+      <div className="grid grid-cols-3 gap-8">
         <div className="space-y-2">
           <Label htmlFor="rating-filter">Minimum Rating</Label>
           <Slider
@@ -74,22 +74,6 @@ const FilterSection = ({
               Show available now
             </Label>
           </div>
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="brand-filter">Brand Expertise</Label>
-          <Select value="all" onValueChange={() => {}}>
-            <SelectTrigger id="brand-filter">
-              <SelectValue placeholder="Select brand" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Brands</SelectItem>
-              <SelectItem value="rolex">Rolex</SelectItem>
-              <SelectItem value="omega">Omega</SelectItem>
-              <SelectItem value="cartier">Cartier</SelectItem>
-              <SelectItem value="tag">TAG Heuer</SelectItem>
-            </SelectContent>
-          </Select>
         </div>
       </div>
     </div>

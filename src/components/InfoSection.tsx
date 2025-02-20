@@ -2,81 +2,77 @@ import { Clock, ShieldCheck, Wrench, Award } from "lucide-react";
 
 const InfoSection = () => {
   return (
-    <div className="bg-white py-16">
+    <div className="relative bg-gray-900 py-24 overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509048191080-d2984bad6ae5')] bg-cover bg-center mix-blend-overlay opacity-20" />
+      <div className="absolute inset-0 bg-[radial-gradient(#64748b_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_70%,transparent_100%)] opacity-20 -z-10" />
+
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Expert Watch Repair Services Near You
+        <h2 className="text-5xl font-serif font-medium text-center mb-16 text-white leading-tight">
+          Expert Watch Repair Services
+          <span className="block text-lg font-sans font-light mt-4 text-gray-400">
+            Discover skilled watchmakers near you
+          </span>
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div className="text-center space-y-4">
-            <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-              <Wrench className="h-8 w-8 text-primary" />
+          <div className="text-center space-y-4 group">
+            <div className="bg-white/5 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 border border-white/10">
+              <Wrench className="h-8 w-8 text-white group-hover:rotate-12 transition-transform duration-300" />
             </div>
-            <h3 className="text-xl font-semibold">Professional Repairs</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl font-serif font-medium text-white">
+              Professional Repairs
+            </h3>
+            <p className="text-gray-400 font-sans font-light">
               Expert watchmakers specializing in luxury and vintage timepiece
               repairs
             </p>
           </div>
 
-          <div className="text-center space-y-4">
-            <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-              <Clock className="h-8 w-8 text-primary" />
+          <div className="text-center space-y-4 group">
+            <div className="bg-white/5 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 border border-white/10">
+              <Clock className="h-8 w-8 text-white group-hover:rotate-12 transition-transform duration-300" />
             </div>
-            <h3 className="text-xl font-semibold">Quick Turnaround</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl font-serif font-medium text-white">
+              Quick Turnaround
+            </h3>
+            <p className="text-gray-400 font-sans font-light">
               Fast and efficient service with most repairs completed within 3-5
               days
             </p>
           </div>
 
-          <div className="text-center space-y-4">
-            <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-              <ShieldCheck className="h-8 w-8 text-primary" />
+          <div className="text-center space-y-4 group">
+            <div className="bg-white/5 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 border border-white/10">
+              <ShieldCheck className="h-8 w-8 text-white group-hover:rotate-12 transition-transform duration-300" />
             </div>
-            <h3 className="text-xl font-semibold">Warranty Guaranteed</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl font-serif font-medium text-white">
+              Warranty Guaranteed
+            </h3>
+            <p className="text-gray-400 font-sans font-light">
               All repairs backed by our comprehensive warranty policy
             </p>
           </div>
 
-          <div className="text-center space-y-4">
-            <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-              <Award className="h-8 w-8 text-primary" />
+          <div className="text-center space-y-4 group">
+            <div className="bg-white/5 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 border border-white/10">
+              <Award className="h-8 w-8 text-white group-hover:rotate-12 transition-transform duration-300" />
             </div>
-            <h3 className="text-xl font-semibold">Certified Experts</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl font-serif font-medium text-white">
+              Certified Experts
+            </h3>
+            <p className="text-gray-400 font-sans font-light">
               Licensed and certified watchmakers with years of experience
             </p>
           </div>
         </div>
 
-        <div className="prose max-w-none">
-          <h2 className="text-2xl font-semibold mb-4">
-            Find the Best Watch Repair Shop Near You
-          </h2>
-          <p className="text-gray-600 mb-4">
-            Discover expert watch repair services tailored to your schedule and
-            location. Our innovative platform connects you with skilled
-            watchmakers in your area, making it effortless to find available
-            appointments that fit your busy lifestyle. Using advanced
-            location-based technology and real-time availability updates, we
-            help you locate and book appointments with certified watch repair
-            professionals who can service your timepiece when it's most
-            convenient for you.
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-lg font-sans font-light text-gray-400">
+            Our innovative platform connects you with skilled watchmakers in
+            your area, making it effortless to find available appointments that
+            fit your busy lifestyle.
           </p>
-
-          <h3 className="text-xl font-semibold mb-3">
-            Why Choose Local Watch Repair Shops?
-          </h3>
-          <ul className="list-disc pl-6 text-gray-600 mb-6">
-            <li>Convenient location and easy accessibility</li>
-            <li>Personal attention and face-to-face consultation</li>
-            <li>Immediate assessment of repair needs</li>
-            <li>Support local skilled craftsmen</li>
-            <li>Often more affordable than manufacturer service centers</li>
-          </ul>
         </div>
       </div>
     </div>
