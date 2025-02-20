@@ -30,7 +30,7 @@ const ShopCard = ({
 }: ShopCardProps) => {
   return (
     <Card
-      className="w-[580px] min-h-[240px] cursor-pointer hover:shadow-lg transition-shadow bg-white overflow-hidden flex"
+      className="w-full min-h-[240px] cursor-pointer hover:shadow-lg transition-shadow bg-white overflow-hidden flex"
       onClick={onClick}
     >
       <div className="w-[200px] h-full">

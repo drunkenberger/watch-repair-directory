@@ -28,36 +28,60 @@ interface Shop {
 const defaultShops: Shop[] = [
   {
     id: "1",
-    name: "Precision Watch Repairs",
-    rating: 4.8,
+    name: "HOSPITAL DE RELOJES LEON",
+    rating: 4.1,
     distance: "0.3 miles",
-    hours: "9:00 AM - 6:00 PM",
-    isOpen: true,
-    topReview: "Best watch repair service in the city! Highly recommended.",
-    address: "Av. Venustiano Carranza 2301, San Luis Potosi, SLP, Mexico",
-    phone: "(555) 123-4567",
+    hours: "Closed",
+    isOpen: false,
+    topReview:
+      "A number where they do answer! I stopped to change the battery and they charged me 80 pesos and it doesn't work!!! And it's closed and the phone number doesn't work!!!",
+    address: "Joaquin Angulo 756, Zona Centro, 44200 Guadalajara, Jal., Mexico",
+    phone: "33 2818 3289",
   },
   {
     id: "2",
-    name: "Timeless Watch Care",
-    rating: 4.5,
+    name: "REPARACION DE ALHAJAS Y RELOJES",
+    rating: 5.0,
     distance: "0.8 miles",
-    hours: "10:00 AM - 7:00 PM",
-    isOpen: true,
-    topReview: "Excellent service and very knowledgeable staff.",
-    address: "Av. Universidad 1340, San Luis Potosi, SLP, Mexico",
-    phone: "(555) 234-5678",
+    hours: "Closed",
+    isOpen: false,
+    topReview: "Excellent service and price",
+    address: "Etiopia 3254, Lagos de Oriente, 44770 Guadalajara, Jal., Mexico",
+    phone: "33 3843 5412",
   },
   {
     id: "3",
-    name: "Classic Timepiece Repair",
-    rating: 4.2,
+    name: "HENRY'S relojeria",
+    rating: 4.5,
     distance: "1.2 miles",
-    hours: "9:30 AM - 5:30 PM",
+    hours: "Closed",
     isOpen: false,
     topReview: "Great work on vintage watches. Fair prices.",
     address: "Av. Salvador Nava 105, San Luis Potosi, SLP, Mexico",
-    phone: "(555) 345-6789",
+    phone: "33 3843 5412",
+  },
+  {
+    id: "4",
+    name: "Joyeria y Relojeria Diamante",
+    rating: 4.8,
+    distance: "1.5 miles",
+    hours: "Closed",
+    isOpen: false,
+    topReview: "Excellent service for luxury timepieces. True craftsmen.",
+    address: "Av. Revolucion 2703, Guadalajara, Jal., Mexico",
+    phone: "33 3615 7890",
+  },
+  {
+    id: "5",
+    name: "Relojeria El Tiempo",
+    rating: 4.3,
+    distance: "1.8 miles",
+    hours: "Closed",
+    isOpen: false,
+    topReview:
+      "Professional watch repair service with great attention to detail.",
+    address: "Av. Mexico 2890, Guadalajara, Jal., Mexico",
+    phone: "33 3729 1234",
   },
 ];
 
@@ -67,7 +91,7 @@ const HomePage = () => {
   const [rating, setRating] = useState([3.5]);
   const [distance, setDistance] = useState("5");
   const [openNow, setOpenNow] = useState(false);
-  const [shops, setShops] = useState<Shop[]>([]);
+  const [shops, setShops] = useState<Shop[]>(defaultShops);
   const [showSearch, setShowSearch] = useState(false);
 
   const handleShopClick = (shop: Shop) => {
@@ -172,10 +196,11 @@ const HomePage = () => {
                     name: result.name || "Unknown Shop",
                     rating: result.rating || 0,
                     distance: "calculating...",
-                    hours: placeDetails?.opening_hours?.isOpen()
-                      ? "Open"
-                      : "Closed",
-                    isOpen: placeDetails?.opening_hours?.isOpen() || false,
+                    hours:
+                      placeDetails?.opening_hours?.weekday_text?.[
+                        new Date().getDay() - 1
+                      ] || "Hours not available",
+                    isOpen: placeDetails?.opening_hours?.isOpen?.() || false,
                     topReview: placeDetails?.reviews?.[0]?.text || "",
                     address: result.formatted_address || "",
                     phone:

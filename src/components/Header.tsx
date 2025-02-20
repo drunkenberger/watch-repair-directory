@@ -1,21 +1,41 @@
-import React from "react";
-import { Button } from "./ui/button";
-import { Search, Clock, Menu } from "lucide-react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "./ui/navigation-menu";
-
 const Header = () => {
+  const brands = [
+    "Rolex",
+    "Omega",
+    "Cartier",
+    "Patek Philippe",
+    "Audemars Piguet",
+    "TAG Heuer",
+    "IWC",
+    "Jaeger-LeCoultre",
+    "Vacheron Constantin",
+    "Breitling",
+  ];
+
   return (
-    <header className="w-full h-[72px] px-4 border-b flex items-center justify-center bg-white">
-      <h1 className="text-xl font-semibold text-gray-900">
-        Watch Repair Finder
-      </h1>
+    <header className="w-full h-[72px] border-b bg-white overflow-hidden">
+      <div className="h-full flex items-center relative">
+        <div className="flex absolute animate-marquee whitespace-nowrap">
+          {[...brands, ...brands, ...brands].map((brand, index) => (
+            <span
+              key={index}
+              className="text-xl font-medium text-gray-900 flex items-center mx-8"
+            >
+              {brand} Watch Repair <span className="text-gray-400 mx-2">•</span>
+            </span>
+          ))}
+        </div>
+        <div className="flex absolute animate-marquee2 whitespace-nowrap">
+          {[...brands, ...brands, ...brands].map((brand, index) => (
+            <span
+              key={index}
+              className="text-xl font-medium text-gray-900 flex items-center mx-8"
+            >
+              {brand} Watch Repair <span className="text-gray-400 mx-2">•</span>
+            </span>
+          ))}
+        </div>
+      </div>
     </header>
   );
 };

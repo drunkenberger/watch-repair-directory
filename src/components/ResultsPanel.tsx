@@ -66,6 +66,33 @@ export const defaultShops: Shop[] = [
     image:
       "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
   },
+  {
+    id: "4",
+    name: "Luxury Watch Workshop",
+    rating: 4.9,
+    distance: "1.5 miles",
+    hours: "10:00 AM - 8:00 PM",
+    isOpen: true,
+    topReview: "Exceptional service for luxury timepieces. True craftsmen.",
+    address: "Av. Himno Nacional 1000, San Luis Potosi, SLP, Mexico",
+    phone: "(555) 456-7890",
+    image:
+      "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+  },
+  {
+    id: "5",
+    name: "Heritage Watch Repairs",
+    rating: 4.7,
+    distance: "1.8 miles",
+    hours: "9:00 AM - 7:00 PM",
+    isOpen: true,
+    topReview:
+      "Specialists in vintage and antique timepieces. Outstanding results.",
+    address: "Av. Sierra Leona 550, San Luis Potosi, SLP, Mexico",
+    phone: "(555) 567-8901",
+    image:
+      "https://images.unsplash.com/photo-1619946794135-5bc917a27793?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+  },
 ];
 
 const ResultsPanel = ({

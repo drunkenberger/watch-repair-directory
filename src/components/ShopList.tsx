@@ -61,7 +61,7 @@ const ShopList = ({
   onShopClick = () => {},
 }: ShopListProps) => {
   return (
-    <div className="w-full bg-white rounded-lg shadow-sm border p-4 overflow-hidden h-[630px]">
+    <div className="w-full bg-white rounded-lg shadow-sm border p-4 overflow-hidden h-[900px]">
       <ScrollArea className="h-full">
         <div className="flex flex-col gap-4">
           {shops.map((shop) => (
