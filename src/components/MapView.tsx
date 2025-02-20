@@ -126,8 +126,13 @@ const MapView = ({
     initMap();
   }, [center, markers, onMarkerClick]);
   return (
-    <div className="w-[900px] h-[750px] bg-slate-100 relative">
+    <div className="w-[900px] h-[750px] relative rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/5 to-transparent z-10 pointer-events-none" />
       <div ref={mapRef} className="w-full h-full" />
+      <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg border border-gray-200/50 text-sm text-gray-600 flex items-center gap-2">
+        <span>Watch Repair Locations</span>
+        <div className="w-2 h-2 rounded-full bg-blue-600" />
+      </div>
     </div>
   );
 };

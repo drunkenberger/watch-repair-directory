@@ -27,10 +27,12 @@ const SearchSection = ({
   const [suggestions, setSuggestions] = useState<
     google.maps.places.AutocompletePrediction[]
   >([]);
+  const [inputValue, setInputValue] = useState(searchValue);
   const autocompleteService = useRef<google.maps.places.AutocompleteService>();
   const placesService = useRef<google.maps.places.PlacesService>();
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [locationLoading, setLocationLoading] = useState(false);
+  const debounceTimeout = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     const initGoogleServices = async () => {
@@ -52,35 +54,44 @@ const SearchSection = ({
     initGoogleServices();
   }, []);
 
-  const handleSearchInput = async (value: string) => {
-    if (!autocompleteService.current) {
-      console.error("Autocomplete service not initialized");
+  const fetchSuggestions = async (value: string) => {
+    if (!autocompleteService.current || !value.trim()) {
+      setSuggestions([]);
       return;
     }
 
     try {
-      if (!value.trim()) {
-        setSuggestions([]);
-        onSearch("");
-        return;
-      }
-
       const response = await autocompleteService.current.getPlacePredictions({
         input: value,
         types: ["geocode", "establishment"],
       });
 
       setSuggestions(response?.predictions || []);
-      onSearch(value);
     } catch (error) {
       console.error("Error fetching suggestions:", error);
       setSuggestions([]);
     }
   };
 
+  const handleSearchInput = (value: string) => {
+    setInputValue(value);
+
+    // Clear previous timeout
+    if (debounceTimeout.current) {
+      clearTimeout(debounceTimeout.current);
+    }
+
+    // Set new timeout for API call
+    debounceTimeout.current = setTimeout(() => {
+      fetchSuggestions(value);
+      onSearch(value);
+    }, 300);
+  };
+
   const handleSuggestionClick = (
     suggestion: google.maps.places.AutocompletePrediction,
   ) => {
+    setInputValue(suggestion.description);
     onSearch(suggestion.description);
     setSuggestions([]);
   };
@@ -118,6 +129,7 @@ const SearchSection = ({
         );
       });
 
+      setInputValue(result as string);
       onSearch(result as string);
     } catch (error) {
       console.error("Error getting location:", error);
@@ -136,16 +148,16 @@ const SearchSection = ({
                 ref={searchInputRef}
                 type="text"
                 placeholder="Enter your location"
-                value={searchValue}
+                value={inputValue}
                 onChange={(e) => handleSearchInput(e.target.value)}
                 className="pl-10 pr-4 h-12 text-lg text-gray-900 w-full"
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             </div>
-            <Button className="h-12 px-6" onClick={() => onSearch(searchValue)}>
+            <Button className="h-12 px-6" onClick={() => onSearch(inputValue)}>
               Search
             </Button>
-            {suggestions.length > 0 && searchValue && (
+            {suggestions.length > 0 && inputValue && (
               <div className="absolute left-0 right-0 top-[calc(100%+4px)] bg-white border rounded-md shadow-lg z-50 max-h-[300px] overflow-y-auto">
                 {suggestions.map((suggestion, index) => (
                   <div
