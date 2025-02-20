@@ -8,6 +8,9 @@ import LandingHero from "./LandingHero";
 import InfoSection from "./InfoSection";
 import PriceGuide from "./PriceGuide";
 import Footer from "./Footer";
+import AdBanner from "./AdBanner";
+import AdSpots from "./AdSpots";
+import SponsoredContent from "./SponsoredContent";
 import { getGoogleMapsLoader } from "@/lib/googleMaps";
 
 interface Shop {
@@ -221,8 +224,19 @@ const HomePage = () => {
         }}
         {...selectedShop}
       />
-      <InfoSection />
+      <div className="max-w-7xl mx-auto px-4 py-12 space-y-12">
+        <AdSpots type="banner" />
+        <div className="flex gap-8">
+          <div className="flex-1">
+            <AdBanner type="horizontal" />
+          </div>
+          <AdSpots />
+        </div>
+        <AdSpots type="native" />
+      </div>
       <PriceGuide />
+      <SponsoredContent />
+      <InfoSection />
       <Footer />
     </div>
   );

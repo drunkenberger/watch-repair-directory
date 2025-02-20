@@ -4,9 +4,10 @@ const InfoSection = () => {
   return (
     <div className="relative bg-gray-900 py-24 overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509048191080-d2984bad6ae5')] bg-cover bg-center mix-blend-overlay opacity-20" />
-      <div className="absolute inset-0 bg-[radial-gradient(#64748b_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_70%,transparent_100%)] opacity-20 -z-10" />
 
+      <div className="absolute inset-0 bg-[radial-gradient(#64748b_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_70%,transparent_100%)] opacity-20 -z-10">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509048191080-d2984bad6ae5')] bg-cover bg-center mix-blend-overlay opacity-20" />
+      </div>
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-5xl font-serif font-medium text-center mb-16 text-white leading-tight">
           Expert Watch Repair Services
@@ -47,10 +48,10 @@ const InfoSection = () => {
               <ShieldCheck className="h-8 w-8 text-white group-hover:rotate-12 transition-transform duration-300" />
             </div>
             <h3 className="text-2xl font-serif font-medium text-white">
-              Warranty Guaranteed
+              Quality Service
             </h3>
             <p className="text-gray-400 font-sans font-light">
-              All repairs backed by our comprehensive warranty policy
+              Trusted watchmakers with proven track records of excellence
             </p>
           </div>
 
