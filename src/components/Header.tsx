@@ -1,3 +1,5 @@
+import Navigation from "./Navigation";
+
 const Header = () => {
   const brands = [
     "Rolex",
@@ -15,27 +17,32 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full h-[72px] border-b bg-white overflow-hidden">
-      <div className="h-full flex items-center relative">
-        <div className="flex absolute animate-marquee whitespace-nowrap">
-          {[...brands, ...brands, ...brands].map((brand, index) => (
-            <span
-              key={index}
-              className="text-xl font-medium text-gray-900 flex items-center mx-8"
-            >
-              {brand} Watch Repair <span className="text-gray-400 mx-2">•</span>
-            </span>
-          ))}
-        </div>
-        <div className="flex absolute animate-marquee2 whitespace-nowrap">
-          {[...brands, ...brands, ...brands].map((brand, index) => (
-            <span
-              key={index}
-              className="text-xl font-medium text-gray-900 flex items-center mx-8"
-            >
-              {brand} Watch Repair <span className="text-gray-400 mx-2">•</span>
-            </span>
-          ))}
+    <header className="w-full">
+      <Navigation />
+      <div className="h-[72px] border-b bg-white overflow-hidden">
+        <div className="h-full flex items-center relative">
+          <div className="flex absolute animate-marquee whitespace-nowrap">
+            {[...brands, ...brands, ...brands].map((brand, index) => (
+              <span
+                key={index}
+                className="text-xl font-medium text-gray-900 flex items-center mx-8"
+              >
+                {brand} Watch Repair{" "}
+                <span className="text-gray-400 mx-2">•</span>
+              </span>
+            ))}
+          </div>
+          <div className="flex absolute animate-marquee2 whitespace-nowrap">
+            {[...brands, ...brands, ...brands].map((brand, index) => (
+              <span
+                key={index}
+                className="text-xl font-medium text-gray-900 flex items-center mx-8"
+              >
+                {brand} Watch Repair{" "}
+                <span className="text-gray-400 mx-2">•</span>
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </header>

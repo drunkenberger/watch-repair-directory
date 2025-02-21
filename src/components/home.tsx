@@ -7,6 +7,7 @@ import ShopDetailModal from "./ShopDetailModal";
 import LandingHero from "./LandingHero";
 import InfoSection from "./InfoSection";
 import PriceGuide from "./PriceGuide";
+import BlogPreview from "./blog/BlogPreview";
 import Footer from "./Footer";
 import AdBanner from "./AdBanner";
 import AdSpots from "./AdSpots";
@@ -250,6 +251,7 @@ const HomePage = () => {
         {...selectedShop}
       />
       <div className="max-w-7xl mx-auto px-4 py-12 space-y-12">
+        <BlogPreview />
         <AdSpots type="banner" />
         <div className="flex gap-8">
           <div className="flex-1">
