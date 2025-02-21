@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
@@ -6,6 +7,8 @@ interface AdBannerProps {
 }
 
 const AdBanner = ({ type = "horizontal" }: AdBannerProps) => {
+  const [currentAdIndex, setCurrentAdIndex] = useState(0);
+
   const sponsors = [
     {
       name: "European Watch Company",
@@ -33,18 +36,26 @@ const AdBanner = ({ type = "horizontal" }: AdBannerProps) => {
     },
   ];
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentAdIndex((prev) => (prev + 1) % sponsors.length);
+    }, 20000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   if (type === "horizontal") {
     return (
       <div className="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-serif text-center mb-8">
-            Featured Watch Websites
+            Featured Watch Services
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {sponsors.map((sponsor, index) => (
               <div
                 key={index}
-                className="relative group overflow-hidden rounded-lg"
+                className="relative group overflow-hidden rounded-lg transition-all duration-500"
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 z-10" />
                 <img
@@ -85,8 +96,11 @@ const AdBanner = ({ type = "horizontal" }: AdBannerProps) => {
       <div className="p-4 bg-primary text-white">
         <h3 className="font-semibold">Sponsored</h3>
       </div>
-      {sponsors.slice(0, 1).map((sponsor, index) => (
-        <div key={index} className="p-4">
+      {sponsors.map((sponsor, index) => (
+        <div
+          key={index}
+          className={`p-4 transition-all duration-500 ${index === currentAdIndex ? "opacity-100 scale-100" : "opacity-0 scale-95 hidden"}`}
+        >
           <img
             src={sponsor.image}
             alt={sponsor.name}

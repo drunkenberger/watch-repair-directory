@@ -28,7 +28,7 @@ const SponsoredContent = () => {
       icon: TrendingUp,
       description: "Enhanced visibility and premium features",
       features: ["Priority listing", "Detailed analytics", "Verified badge"],
-      price: "$49/month",
+      price: "$19/month",
       highlight: false,
     },
     {
@@ -36,53 +36,53 @@ const SponsoredContent = () => {
       icon: Rocket,
       description: "Maximum exposure and exclusive benefits",
       features: ["Homepage feature", "Custom promotions", "Direct booking"],
-      price: "$149/month",
+      price: "$49/month",
       highlight: true,
     },
   ];
 
   const onlineServices = [
     {
-      title: "Rolex Service Center",
+      title: "Crown & Caliber Service",
       icon: Package,
-      description: "Official Rolex mail-in service and repairs",
+      description: "Luxury Watch Service & Trade-In Platform",
       image:
         "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800",
       features: [
-        "Authorized service",
-        "Genuine parts",
+        "Certified watchmakers",
+        "Luxury watch experts",
         "Service tracking",
         "Global warranty",
       ],
-      link: "https://www.rolex.com/watch-care-and-service",
+      link: "https://www.crownandcaliber.com/pages/watch-service",
     },
     {
-      title: "Omega Service Center",
+      title: "Timex Service Center",
       icon: Video,
-      description: "Official Omega watch service and repairs",
+      description: "Official Timex, Casio & Citizen Service",
       image:
         "https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=800",
       features: [
-        "Factory service",
-        "Online estimates",
-        "Service tracking",
-        "2-year warranty",
+        "Battery replacement",
+        "Water resistance",
+        "Crystal repair",
+        "Band adjustment",
       ],
-      link: "https://www.omegawatches.com/customer-service",
+      link: "https://www.timex.com/customer-service/repairs/",
     },
     {
-      title: "TotalWatch Repair",
+      title: "Watchfinder & Co.",
       icon: MessageCircle,
-      description: "Mail-in repair service for all watch brands",
+      description: "Pre-owned Luxury Watch Service",
       image:
         "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800",
       features: [
-        "Free shipping",
-        "Online quotes",
-        "All brands",
-        "1-year warranty",
+        "Authentication service",
+        "Certified repairs",
+        "Global shipping",
+        "12-month warranty",
       ],
-      link: "https://totalwatchrepair.com/",
+      link: "https://www.watchfinder.com/service",
     },
   ];
 

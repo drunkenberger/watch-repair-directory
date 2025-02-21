@@ -3,13 +3,15 @@ const Header = () => {
     "Rolex",
     "Omega",
     "Cartier",
-    "Patek Philippe",
-    "Audemars Piguet",
+    "Casio",
+    "Timex",
+    "Swatch",
+    "Seiko",
+    "Citizen",
     "TAG Heuer",
-    "IWC",
-    "Jaeger-LeCoultre",
-    "Vacheron Constantin",
-    "Breitling",
+    "Fossil",
+    "G-Shock",
+    "Bulova",
   ];
 
   return (
