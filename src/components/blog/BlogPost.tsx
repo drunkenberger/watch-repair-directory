@@ -45,14 +45,20 @@ const BlogPost = () => {
 
         // Fix WordPress stripped iframes and embeds
         processedContent = processedContent
-          // Fix YouTube embeds (both URL and iframe versions)
+          // Fix YouTube embeds (handle all variations)
           .replace(
-            /https:\/\/www\.youtube\.com\/watch\?v=([\w-]+)/g,
-            "https://www.youtube.com/embed/$1",
+            /<figure[^>]*?wp-block-embed-youtube[^>]*?>.*?<div[^>]*?wp-block-embed__wrapper[^>]*?>.*?(?:<p>)?\s*(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)\s*(?:<\/p>)?.*?<\/div>.*?<\/figure>/gs,
+            '<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube"><div class="wp-block-embed__wrapper"><iframe width="800" height="450" src="https://www.youtube.com/embed/$1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></figure>',
           )
+          // Handle plain YouTube URLs
           .replace(
-            /<figure[^>]*class="[^"]*wp-block-embed[^"]*youtube[^"]*"[^>]*>.*?<div[^>]*class="wp-block-embed__wrapper"[^>]*>.*?(?:<p>)?\s*(https:\/\/(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/)([\w-]+))\s*(?:<\/p>)?.*?<\/div><\/figure>/gs,
-            '<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube"><div class="wp-block-embed__wrapper"><iframe width="800" height="450" src="https://www.youtube.com/embed/$2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></figure>',
+            /(?:<p>)?\s*(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)\s*(?:<\/p>)?/g,
+            '<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube"><div class="wp-block-embed__wrapper"><iframe width="800" height="450" src="https://www.youtube.com/embed/$1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></figure>',
+          )
+          // Handle existing iframes
+          .replace(
+            /<iframe[^>]*?youtube\.com\/embed\/([\w-]+)[^>]*?><\/iframe>/g,
+            '<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube"><div class="wp-block-embed__wrapper"><iframe width="800" height="450" src="https://www.youtube.com/embed/$1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></figure>',
           )
           // Fix image URLs
           .replace(
