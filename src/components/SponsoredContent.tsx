@@ -43,46 +43,46 @@ const SponsoredContent = () => {
 
   const onlineServices = [
     {
-      title: "Crown & Caliber Service",
+      title: "Esslinger Watch Repair",
       icon: Package,
-      description: "Luxury Watch Service & Trade-In Platform",
+      description: "DIY Watch Repair Tools & Professional Service",
       image:
         "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800",
       features: [
-        "Certified watchmakers",
-        "Luxury watch experts",
-        "Service tracking",
-        "Global warranty",
+        "Watch repair kits",
+        "Replacement parts",
+        "Professional service",
+        "Educational resources",
       ],
-      link: "https://www.crownandcaliber.com/pages/watch-service",
+      link: "https://www.esslinger.com/watch-repair-service/",
     },
     {
-      title: "Timex Service Center",
+      title: "G-Shock Service Center",
       icon: Video,
-      description: "Official Timex, Casio & Citizen Service",
+      description: "Official Casio G-Shock & Baby-G Service",
       image:
         "https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=800",
       features: [
-        "Battery replacement",
-        "Water resistance",
-        "Crystal repair",
-        "Band adjustment",
+        "Factory authorized service",
+        "Genuine Casio parts",
+        "Module repairs",
+        "Water resistance testing",
       ],
-      link: "https://www.timex.com/customer-service/repairs/",
+      link: "https://www.casio.com/us/support/repair-service/",
     },
     {
-      title: "Watchfinder & Co.",
+      title: "Swatch Service Center",
       icon: MessageCircle,
-      description: "Pre-owned Luxury Watch Service",
+      description: "Official Swatch Watch Repair & Service",
       image:
         "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800",
       features: [
-        "Authentication service",
-        "Certified repairs",
-        "Global shipping",
-        "12-month warranty",
+        "Battery replacement",
+        "Original Swatch parts",
+        "Strap replacement",
+        "Water resistance check",
       ],
-      link: "https://www.watchfinder.com/service",
+      link: "https://www.swatch.com/en-us/customer-service.html",
     },
   ];
 
